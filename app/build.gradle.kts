@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -31,6 +32,12 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+    kapt {
+        correctErrorTypes = true
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
+    }
 }
 
 dependencies {
@@ -44,4 +51,23 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:runner:1.5.0-alpha02")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0-alpha05")
+    api(Libraries.retrofit)
+    api(Libraries.daggerHilt)
+    api(Libraries.gson)
+    api(Libraries.retrofitGsonConverter)
+    api(Libraries.httpLoggingInterceptor)
+    api(Libraries.sandwich)
+    kapt(Libraries.daggerHiltCompiler)
+    api(KotlinLibraries.kotlinCoroutineCore)
+    api(AndroidLibraries.kotlinCoroutineAndroid)
+    api(AndroidLibraries.lifeCycleViewModel)
+    api(AndroidLibraries.lifecycleViewModelExt)
+    api(AndroidLibraries.activityExt)
+    api(KotlinLibraries.arrow)
+
+    implementation(project(":data:remote"))
+    implementation(project(":data:model"))
+    implementation(project(":data:repository"))
+    implementation(project(":core"))
+    implementation(project(":domain"))
 }

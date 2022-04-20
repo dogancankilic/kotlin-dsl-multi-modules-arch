@@ -6,6 +6,7 @@ plugins {
     id ("androidx.navigation.safeargs.kotlin") version "2.5.0-alpha01" apply false
     id ("com.google.dagger.hilt.android") version "2.41" apply false
     id ("org.jlleitschuh.gradle.ktlint") version "10.2.1"
+    id("org.jetbrains.kotlin.jvm") version "1.6.10" apply false
 }
 
 subprojects {

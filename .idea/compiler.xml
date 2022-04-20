@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="kotlin-dsl-multi-modules-arch.app" target="11" />
+      <module name="kotlin-dsl-multi-modules-arch.core" target="11" />
+      <module name="kotlin-dsl-multi-modules-arch.data.local" target="11" />
+      <module name="kotlin-dsl-multi-modules-arch.data.remote" target="11" />
+      <module name="kotlin-dsl-multi-modules-arch.data.remote.main" target="11" />
+      <module name="kotlin-dsl-multi-modules-arch.data.remote.test" target="11" />
+      <module name="kotlin-dsl-multi-modules-arch.data.repository" target="11" />
+      <module name="kotlin-dsl-multi-modules-arch.domain" target="11" />
+      <module name="kotlindslmultimodulesarch.buildSrc" target="11" />
+      <module name="kotlindslmultimodulesarch.buildSrc.main" target="11" />
+      <module name="kotlindslmultimodulesarch.buildSrc.test" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

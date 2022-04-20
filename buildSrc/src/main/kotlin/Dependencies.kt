@@ -20,15 +20,14 @@
         val junit = "4.12"
         val androidTestRunner = "1.1.2-alpha02"
         val espressoCore = "3.2.0-alpha02"
-        val retrofit = "2.5.0"
+        val retrofit = "2.9.0"
         val retrofitCoroutines = "0.9.2"
-        val retrofitGson = "2.4.0"
-        val gson = "2.8.5"
-        val okHttp = "3.12.1"
-        val coroutines = "1.1.1"
+        val retrofitGson = "2.9.0"
+        val gson = "2.8.6"
+        val coroutines = "1.6.0"
         val koin = "1.0.2"
         val timber = "4.7.1"
-        val lifecycle = "2.1.0-alpha04"
+        val lifecycle = "2.4.0"
         val nav = "2.0.0"
         val room = "2.1.0-alpha06"
         val recyclerview = "1.0.0"
@@ -40,13 +39,14 @@
         val mockk = "1.9.2"
         val fragmentTest = "1.1.0-alpha06"
         val databinding = "3.3.2"
+        val hilt = "2.41"
+        val okHttp = "4.7.2"
+        val sandwich = "1.2.4"
+        val activityExt = "1.2.3"
+        val arrow ="1.0.1"
     }
 
     object Libraries {
-        // KOIN
-        val koin = "org.koin:koin-android:${Versions.koin}"
-        val koinViewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
-
         // ROOM
         val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
         val roomRunTime = "androidx.room:room-runtime:${Versions.room}"
@@ -62,12 +62,20 @@
 
         // GLIDE
         val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+
+        val daggerHilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+        val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+        val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
+        val sandwich ="com.github.skydoves:sandwich:${Versions.sandwich}"
+
+
     }
 
     object KotlinLibraries {
         val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
         val kotlinCoroutineCore =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+        val arrow = "io.arrow-kt:arrow-core:${Versions.arrow}"
     }
 
     object AndroidLibraries {
@@ -80,11 +88,14 @@
         val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
         val constraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
-        val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+        val lifeCycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
+        val lifecycleViewModelExt = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
         val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
         val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
         val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
         val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
+        val activityExt ="androidx.activity:activity-ktx:${Versions.activityExt}"
+
     }
 
     object TestLibraries {
