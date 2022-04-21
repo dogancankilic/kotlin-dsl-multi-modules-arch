@@ -15,3 +15,9 @@ dependencyResolutionManagement {
 rootProject.name = "kotlin-dsl-multi-modules-arch"
 include (":app")
 include(":core")
+include(":data")
+include(":data:model")
+include(":data:remote")
+include(":data:local")
+include(":data:repository")
+include(":domain")
