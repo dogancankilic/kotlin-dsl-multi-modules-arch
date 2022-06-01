@@ -25,7 +25,18 @@ data class Resource<out T>(val status: Status, val data: T?, val message: String
             return Resource(Status.LOADING, data, null)
         }
     }
-
-
 }
 
+fun <T, R> Resource<T>.map(transform: (T) -> R): Resource<R?> {
+    return when (this.status) {
+        Resource.Status.SUCCESS -> {
+            Resource.success(data?.let { transform(it) })
+        }
+        Resource.Status.LOADING -> {
+            Resource.loading(null)
+        }
+        Resource.Status.ERROR -> {
+            Resource.error(Throwable(message), null)
+        }
+    }
+}

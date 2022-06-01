@@ -34,6 +34,6 @@ class MainViewModel @Inject constructor(
     }
 
     data class UiState(
-        val userList: Resource<List<UserUiModel>?> = Resource.loading(null)
+        val userList: Resource<List<UserUiModel>?> = Resource.loading(emptyList())
     )
 }
