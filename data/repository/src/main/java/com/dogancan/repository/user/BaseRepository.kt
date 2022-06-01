@@ -5,9 +5,7 @@ import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.message
 import com.skydoves.sandwich.suspendOnError
 import com.skydoves.sandwich.suspendOnException
-import com.skydoves.sandwich.suspendOnFailure
 import com.skydoves.sandwich.suspendOnSuccess
-import com.skydoves.sandwich.suspendOperator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -20,13 +18,13 @@ abstract class BaseRepository {
 
     fun <T> invoke(
         call: suspend () -> ApiResponse<T>,
-    ): Flow<Resource<T>?> = flow {
+    ): Flow<Resource<T>> = flow {
         emit(Resource.loading(null))
         val response = call.invoke()
-        response.suspendOnSuccess() {
+        response.suspendOnSuccess {
             emit(Resource.success(this.data))
         }.suspendOnError {
-           val message = statusCode.code.toString().plus(message())
+            val message = statusCode.code.toString().plus(message())
             emit(Resource.error(Throwable(message), null))
         }.suspendOnException {
             emit(Resource.error(Throwable(message), null))

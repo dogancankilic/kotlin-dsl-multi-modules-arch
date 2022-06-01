@@ -91,6 +91,7 @@
         val lifeCycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
         val lifecycleViewModelExt = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
         val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+        val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
         val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
         val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
         val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"

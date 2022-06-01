@@ -62,6 +62,7 @@ dependencies {
     api(AndroidLibraries.kotlinCoroutineAndroid)
     api(AndroidLibraries.lifeCycleViewModel)
     api(AndroidLibraries.lifecycleViewModelExt)
+    api(AndroidLibraries.lifecycleRuntime)
     api(AndroidLibraries.activityExt)
     api(KotlinLibraries.arrow)
 
