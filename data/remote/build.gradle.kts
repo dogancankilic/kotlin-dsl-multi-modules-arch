@@ -4,20 +4,16 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("kotlin-kapt")
-
 }
 
 android {
     compileSdk = 31
-    defaultConfig {
-        buildConfigField("String", "BASE_URL", "\"https://jsonplaceholder.typicode.com/\"")
-    }
-
 }
 
 dependencies {
     api(Libraries.retrofit)
     api(Libraries.daggerHilt)
+    implementation("androidx.paging:paging-common-ktx:3.0.0")
     kapt(Libraries.daggerHiltCompiler)
     api(Libraries.gson)
     api(Libraries.retrofitGsonConverter)
@@ -25,10 +21,7 @@ dependencies {
     api(Libraries.sandwich)
     api(KotlinLibraries.arrow)
 
-    implementation(project(":data:model"))
-
-
-
+    implementation(project(":data:responsemodel"))
 }
 
 java {

@@ -23,7 +23,7 @@
         val retrofit = "2.9.0"
         val retrofitCoroutines = "0.9.2"
         val retrofitGson = "2.9.0"
-        val gson = "2.8.6"
+        val gson = "2.8.8"
         val coroutines = "1.6.0"
         val koin = "1.0.2"
         val timber = "4.7.1"

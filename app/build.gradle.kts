@@ -67,7 +67,7 @@ dependencies {
     api(KotlinLibraries.arrow)
 
     implementation(project(":data:remote"))
-    implementation(project(":data:model"))
+    implementation(project(":data:responsemodel"))
     implementation(project(":data:repository"))
     implementation(project(":core"))
     implementation(project(":domain"))

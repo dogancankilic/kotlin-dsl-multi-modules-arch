@@ -1,6 +1,6 @@
 package com.dogancan.remote.di
 
-import com.dogancan.remote.user.UserService
+import com.dogancan.remote.character.CharacterService
 import com.skydoves.sandwich.adapters.ApiResponseCallAdapterFactory
 import com.skydoves.sandwich.adapters.DataSourceCallAdapterFactory
 import dagger.Module
@@ -18,7 +18,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
     @Provides
-    fun provideBaseUrl() = "https://jsonplaceholder.typicode.com/"
+    fun provideBaseUrl() = "hhttps://rickandmortyapi.com/api/"
 
     @Provides
     @Singleton
@@ -45,6 +45,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideProductApiService(retrofit: Retrofit): UserService =
-        retrofit.create(UserService::class.java)
+    fun provideProductApiService(retrofit: Retrofit): CharacterService =
+        retrofit.create(CharacterService::class.java)
 }

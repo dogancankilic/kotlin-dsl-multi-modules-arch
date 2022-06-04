@@ -1,4 +1,4 @@
-package com.dogancan.repository.user
+package com.dogancan.repository.base
 
 import com.dogancan.core.utils.Resource
 import com.skydoves.sandwich.ApiResponse
@@ -30,5 +30,4 @@ abstract class BaseRepository {
             emit(Resource.error(Throwable(message), null))
         }
     }.flowOn(Dispatchers.IO)
-
 }
