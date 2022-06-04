@@ -1,4 +1,4 @@
-package com.example.responsemodel
+package com.dogancan.responsemodel
 
 import com.google.gson.annotations.SerializedName
 

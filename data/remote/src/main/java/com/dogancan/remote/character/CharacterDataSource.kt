@@ -2,7 +2,7 @@ package com.dogancan.remote.character
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.responsemodel.ResultsItem
+import com.dogancan.responsemodel.ResultsItem
 
 /**
  * @author dogancankilic

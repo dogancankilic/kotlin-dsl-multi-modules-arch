@@ -28,6 +28,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    viewBinding.isEnabled = true
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
@@ -48,6 +49,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0-alpha02")
     implementation("androidx.constraintlayout:constraintlayout:2.1.3")
     implementation("com.google.android.material:material:1.5.0")
+    implementation("androidx.paging:paging-runtime-ktx:3.1.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:runner:1.5.0-alpha02")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0-alpha05")
@@ -64,7 +66,8 @@ dependencies {
     api(AndroidLibraries.lifecycleViewModelExt)
     api(AndroidLibraries.lifecycleRuntime)
     api(AndroidLibraries.activityExt)
-    api(KotlinLibraries.arrow)
+    api(AndroidLibraries.navigation)
+    api(AndroidLibraries.navigationFrag)
 
     implementation(project(":data:remote"))
     implementation(project(":data:responsemodel"))

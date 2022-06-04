@@ -23,7 +23,7 @@ class CharacterUseCase @Inject constructor(
         return dataSource
             .getCharacters().map {
                 it.map {
-                    CharacterUiModel(it.name)
+                    CharacterUiModel(it.id, it.name)
                 }
             }.flowOn(ioScope)
     }

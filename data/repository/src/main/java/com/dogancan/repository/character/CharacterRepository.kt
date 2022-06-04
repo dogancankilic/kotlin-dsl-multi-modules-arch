@@ -5,7 +5,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.dogancan.remote.character.CharacterDataSource
 import com.dogancan.remote.character.CharacterService
-import com.example.responsemodel.ResultsItem
+import com.dogancan.responsemodel.ResultsItem
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

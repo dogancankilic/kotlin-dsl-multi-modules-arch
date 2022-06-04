@@ -28,7 +28,7 @@
         val koin = "1.0.2"
         val timber = "4.7.1"
         val lifecycle = "2.4.0"
-        val nav = "2.0.0"
+        val nav = "2.3.5"
         val room = "2.1.0-alpha06"
         val recyclerview = "1.0.0"
         val safeArgs = "2.1.0-alpha01"
