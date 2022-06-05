@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/character"
+    app:startDestination="@id/characterFragment">
+
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.dogancan.kotlin_dsl_multi_modules_arch.features.character.CharacterFragment"
+        android:label="Characters"
+        tools:layout="@layout/fragment_character">
+
+        <action
+            android:id="@+id/navigateToCharacterDetail"
+            app:destination="@id/characterDetailFragment">
+
+            <argument
+                android:name="id"
+                app:argType="integer" />
+
+        </action>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.dogancan.kotlin_dsl_multi_modules_arch.features.characterdetail.CharacterDetailFragment"
+        android:label="Character Detail"
+        tools:layout="@layout/fragment_character_detail" />
+
+    <argument
+        android:name="id"
+        app:argType="integer" />
+
+</navigation>

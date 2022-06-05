@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/episodeFragment"
+    android:id="@+id/episode">
+
+    <fragment
+        android:id="@+id/episodeFragment"
+        android:name="com.dogancan.kotlin_dsl_multi_modules_arch.features.episode.EpisodeFragment"
+        android:label="Episode"
+        tools:layout="@layout/fragment_character" />
+
+</navigation>
