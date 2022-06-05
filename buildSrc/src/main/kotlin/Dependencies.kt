@@ -31,7 +31,7 @@
         val nav = "2.3.5"
         val room = "2.1.0-alpha06"
         val recyclerview = "1.0.0"
-        val safeArgs = "2.1.0-alpha01"
+        val safeArgs = "2.4.2"
         val glide = "4.9.0"
         val mockwebserver = "2.7.5"
         val archCoreTest = "2.0.0"
