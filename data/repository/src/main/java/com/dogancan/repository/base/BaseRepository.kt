@@ -6,10 +6,8 @@ import com.skydoves.sandwich.message
 import com.skydoves.sandwich.suspendOnError
 import com.skydoves.sandwich.suspendOnException
 import com.skydoves.sandwich.suspendOnSuccess
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
 
 /**
  * Created by dogancan.kilic on 4/20/2022.
@@ -29,5 +27,5 @@ abstract class BaseRepository {
         }.suspendOnException {
             emit(Resource.error(Throwable(message), null))
         }
-    }.flowOn(Dispatchers.IO)
+    }
 }

@@ -6,12 +6,12 @@ import com.dogancan.core.utils.Resource
 import com.dogancan.domain.character.CharacterUiModel
 import com.dogancan.domain.characterdetail.CharacterDetailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * @author dogancankilic
