@@ -1,6 +1,6 @@
 package com.dogancan.kotlin_dsl_multi_modules_arch
 
-import androidx.lifecycle.ViewModel
+import com.dogancan.core.base.platform.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -8,4 +8,4 @@ import javax.inject.Inject
  * Created by dogancan.kilic on 4/20/2022.
  */
 @HiltViewModel
-class MainViewModel @Inject constructor() : ViewModel()
+class MainViewModel @Inject constructor() : BaseViewModel()

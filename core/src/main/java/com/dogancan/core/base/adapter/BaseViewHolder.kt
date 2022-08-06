@@ -1,8 +1,8 @@
 package com.dogancan.core.base.adapter
 
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 
-abstract class BaseViewHolder<T : ViewBinding>(
+abstract class BaseViewHolder<T : ViewDataBinding>(
     val binding: T
 ) : RecyclerView.ViewHolder(binding.root)

@@ -1,6 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -23,7 +28,7 @@ android {
             )
         }
     }
-    viewBinding.isEnabled = true
+    dataBinding.isEnabled = true
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -45,4 +50,19 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
     implementation(Libraries.glide)
+    api(Libraries.retrofit)
+    api(Libraries.daggerHilt)
+    api(Libraries.gson)
+    api(Libraries.retrofitGsonConverter)
+    api(Libraries.httpLoggingInterceptor)
+    api(Libraries.sandwich)
+    kapt(Libraries.daggerHiltCompiler)
+    api(KotlinLibraries.kotlinCoroutineCore)
+    api(AndroidLibraries.kotlinCoroutineAndroid)
+    api(AndroidLibraries.lifeCycleViewModel)
+    api(AndroidLibraries.lifecycleViewModelExt)
+    api(AndroidLibraries.lifecycleRuntime)
+    api(AndroidLibraries.activityExt)
+    api(AndroidLibraries.navigation)
+    api(AndroidLibraries.navigationFrag)
 }

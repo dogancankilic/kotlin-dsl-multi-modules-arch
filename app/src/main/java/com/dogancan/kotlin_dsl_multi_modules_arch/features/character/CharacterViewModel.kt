@@ -1,9 +1,9 @@
 package com.dogancan.kotlin_dsl_multi_modules_arch.features.character
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import com.dogancan.core.base.platform.BaseViewModel
 import com.dogancan.domain.character.CharacterUiModel
 import com.dogancan.domain.character.CharacterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,23 +20,27 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class CharacterViewModel @Inject constructor(private val characterUseCase: CharacterUseCase) :
-    ViewModel() {
+    BaseViewModel() {
 
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState
 
     fun getCharacters() {
-        viewModelScope.launch {
-            characterUseCase.getCharacters().cachedIn(viewModelScope).collectLatest { pagingData ->
 
-                _uiState.update {
-                    it.copy(characters = pagingData)
+        viewModelScope.launch {
+            characterUseCase.getCharacters().characterList.cachedIn(viewModelScope)
+                .collectLatest { pagingData ->
+
+                    _uiState.update {
+                        it.copy(
+                            characters = pagingData,
+                        )
+                    }
                 }
-            }
         }
     }
 
     data class UiState(
-        val characters: PagingData<CharacterUiModel> = PagingData.empty(),
+        val characters: PagingData<CharacterUiModel> = PagingData.empty()
     )
 }

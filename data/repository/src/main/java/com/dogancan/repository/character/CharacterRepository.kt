@@ -2,16 +2,14 @@ package com.dogancan.repository.character
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.PagingData
 import com.dogancan.remote.character.CharacterDataSource
 import com.dogancan.remote.character.CharacterDetailDataSource
 import com.dogancan.remote.character.CharacterService
 import com.dogancan.remote.di.IoDispatcher
 import com.dogancan.repository.base.BaseRepository
-import com.dogancan.responsemodel.ResultsItem
+import com.dogancan.responsemodel.CharacterListResponseModel
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 
 /**
@@ -24,16 +22,18 @@ class CharacterRepository @Inject constructor(
     @IoDispatcher private val ioScope: CoroutineDispatcher
 ) : BaseRepository() {
 
-    fun getCharacters(): Flow<PagingData<ResultsItem>> {
-        return Pager(
-            config = PagingConfig(
-                pageSize = 20,
-                enablePlaceholders = false,
-            ),
-            pagingSourceFactory = {
-                CharacterDataSource(service)
-            }, initialKey = 1
-        ).flow
+    fun getCharacters(): CharacterListResponseModel {
+        return CharacterListResponseModel(
+            Pager(
+                config = PagingConfig(
+                    pageSize = 20,
+                    enablePlaceholders = false,
+                ),
+                pagingSourceFactory = {
+                    CharacterDataSource(service)
+                }, initialKey = 1
+            ).flow
+        )
     }
 
     suspend fun getUsers(id: Int) = invoke {

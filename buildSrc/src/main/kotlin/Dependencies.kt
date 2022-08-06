@@ -43,7 +43,6 @@
         val okHttp = "4.7.2"
         val sandwich = "1.2.4"
         val activityExt = "1.2.3"
-        val arrow ="1.0.1"
     }
 
     object Libraries {
@@ -75,7 +74,6 @@
         val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
         val kotlinCoroutineCore =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-        val arrow = "io.arrow-kt:arrow-core:${Versions.arrow}"
     }
 
     object AndroidLibraries {

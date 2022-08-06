@@ -1,6 +1,5 @@
 package com.dogancan.repository.base
 
-import com.dogancan.core.utils.Resource
 import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.message
 import com.skydoves.sandwich.suspendOnError
@@ -16,16 +15,15 @@ abstract class BaseRepository {
 
     fun <T> invoke(
         call: suspend () -> ApiResponse<T>,
-    ): Flow<Resource<T>> = flow {
-        emit(Resource.loading(null))
+    ): Flow<Result<T>> = flow {
         val response = call.invoke()
         response.suspendOnSuccess {
-            emit(Resource.success(this.data))
+            emit(Result.success(this.data))
         }.suspendOnError {
             val message = statusCode.code.toString().plus(message())
-            emit(Resource.error(Throwable(message), null))
+            emit(Result.failure(Throwable(message)))
         }.suspendOnException {
-            emit(Resource.error(Throwable(message), null))
+            emit(Result.failure(Throwable(message)))
         }
     }
 }

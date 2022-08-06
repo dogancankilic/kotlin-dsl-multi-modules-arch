@@ -32,7 +32,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    viewBinding.isEnabled = true
+    dataBinding.isEnabled = true
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
@@ -74,9 +74,7 @@ dependencies {
     api(AndroidLibraries.navigation)
     api(AndroidLibraries.navigationFrag)
 
-    implementation(project(":data:remote"))
-    implementation(project(":data:responsemodel"))
-    implementation(project(":data:repository"))
     implementation(project(":core"))
     implementation(project(":domain"))
+    implementation(project(":data:model"))
 }

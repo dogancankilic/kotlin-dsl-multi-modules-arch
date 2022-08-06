@@ -3,16 +3,17 @@ package com.dogancan.remote.character
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.dogancan.responsemodel.ResultsItem
+import javax.inject.Inject
 
 /**
  * @author dogancankilic
  * Created at 3.06.2022
  */
-class CharacterDataSource(private val apiService: CharacterService) :
+
+class CharacterDataSource @Inject constructor(private val apiService: CharacterService) :
     PagingSource<Int, ResultsItem>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResultsItem> {
-
+    override suspend fun load(params: LoadParams<Int>): PagingSource.LoadResult<Int, ResultsItem> {
         return try {
             val position = params.key ?: 1
             val response = apiService.getCharacters(position).body()

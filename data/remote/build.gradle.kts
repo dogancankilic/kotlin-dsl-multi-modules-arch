@@ -1,5 +1,3 @@
-
-
 plugins {
     id("com.android.library")
     id("kotlin-android")
@@ -19,9 +17,8 @@ dependencies {
     api(Libraries.retrofitGsonConverter)
     api(Libraries.httpLoggingInterceptor)
     api(Libraries.sandwich)
-    api(KotlinLibraries.arrow)
+    implementation(project(":data:model"))
 
-    implementation(project(":data:responsemodel"))
 }
 
 java {

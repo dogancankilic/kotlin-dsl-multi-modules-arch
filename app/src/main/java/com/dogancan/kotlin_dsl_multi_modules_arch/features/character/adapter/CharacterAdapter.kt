@@ -21,7 +21,7 @@ class CharacterAdapter @Inject constructor() : BasePagedListAdapter<CharacterUiM
         parent: ViewGroup,
         inflater: LayoutInflater,
         viewType: Int
-    ): RecyclerView.ViewHolder = CharacterViewHolder(parent, inflater, onItemClick)
+    ): RecyclerView.ViewHolder = CharacterViewHolder(parent, inflater)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
@@ -33,8 +33,7 @@ class CharacterAdapter @Inject constructor() : BasePagedListAdapter<CharacterUiM
 
     inner class CharacterViewHolder(
         parent: ViewGroup,
-        inflater: LayoutInflater,
-        onItemClick: ((item: CharacterUiModel) -> Unit)?
+        inflater: LayoutInflater
     ) : BaseViewHolder<CharacterListItemBinding>(
         binding = CharacterListItemBinding.inflate(inflater, parent, false)
     ) {

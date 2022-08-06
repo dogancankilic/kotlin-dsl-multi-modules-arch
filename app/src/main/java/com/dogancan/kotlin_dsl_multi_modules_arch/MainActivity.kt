@@ -3,6 +3,7 @@ package com.dogancan.kotlin_dsl_multi_modules_arch
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         currentNavController = controller
+
+        currentNavController?.observe(this) { navController ->
+            navController.addOnDestinationChangedListener { _, destination, args ->
+                bottomNavigationView.isVisible = destination.id != R.id.characterDetailFragment
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

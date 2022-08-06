@@ -50,10 +50,8 @@ dependencies {
     api(Libraries.sandwich)
     api(Libraries.daggerHiltCompiler)
     api(KotlinLibraries.kotlinCoroutineCore)
-    api(KotlinLibraries.arrow)
 
-    implementation(project(":data:remote"))
-    implementation(project(":data:responsemodel"))
+    implementation(project(":data:model"))
     implementation(project(":data:repository"))
     implementation(project(":core"))
 }
