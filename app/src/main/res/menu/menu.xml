@@ -2,10 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/character"
-        android:title="Characters" />
+        android:icon="@drawable/ic_home"
+        android:title="@string/characters" />
 
     <item
+        android:icon="@drawable/ic_movie"
         android:id="@+id/episode"
-        android:title="Episodes" />
+        android:title="@string/episodes" />
 
 </menu>

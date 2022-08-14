@@ -5,7 +5,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.dogancan.core.base.platform.BaseViewModel
 import com.dogancan.domain.character.CharacterUiModel
-import com.dogancan.domain.character.CharacterUseCase
+import com.dogancan.domain.character.ICharacterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -19,7 +19,7 @@ import javax.inject.Inject
  * Created at 4.06.2022
  */
 @HiltViewModel
-class CharacterViewModel @Inject constructor(private val characterUseCase: CharacterUseCase) :
+class CharacterViewModel @Inject constructor(private val characterUseCase: ICharacterUseCase) :
     BaseViewModel() {
 
     private val _uiState = MutableStateFlow(UiState())
@@ -30,13 +30,14 @@ class CharacterViewModel @Inject constructor(private val characterUseCase: Chara
         viewModelScope.launch {
             characterUseCase.getCharacters().characterList.cachedIn(viewModelScope)
                 .collectLatest { pagingData ->
-
-                    _uiState.update {
-                        it.copy(
-                            characters = pagingData,
-                        )
-                    }
+                    updateUiState(pagingData)
                 }
+        }
+    }
+
+    private fun updateUiState(result: PagingData<CharacterUiModel>) {
+        _uiState.update {
+            it.copy(characters = result)
         }
     }
 

@@ -36,7 +36,7 @@ class CharacterRepository @Inject constructor(
         )
     }
 
-    suspend fun getUsers(id: Int) = invoke {
+    suspend fun getCharacter(id: Int) = invoke {
         characterDetailDataSource.getCharacter(id)
     }.flowOn(ioScope)
 }

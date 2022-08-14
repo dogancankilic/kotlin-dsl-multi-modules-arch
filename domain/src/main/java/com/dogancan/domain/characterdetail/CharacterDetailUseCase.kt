@@ -12,8 +12,8 @@ class CharacterDetailUseCase @Inject constructor(
     private val dataSource: CharacterRepository,
     private val characterDetailMapper: CharacterDetailMapper
 
-) {
-    suspend fun invoke(id: Int) = dataSource.getUsers(id).map { response ->
+) : ICharacterDetailUseCase {
+    override suspend fun invoke(id: Int) = dataSource.getCharacter(id).map { response ->
         response.map {
             characterDetailMapper.map(it)
         }

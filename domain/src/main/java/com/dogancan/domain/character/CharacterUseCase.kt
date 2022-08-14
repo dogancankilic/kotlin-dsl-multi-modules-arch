@@ -11,14 +11,13 @@ import kotlinx.coroutines.flow.map
  */
 class CharacterUseCase @Inject constructor(
     private val dataSource: CharacterRepository,
-) {
+) : ICharacterUseCase {
 
-    fun getCharacters(): CharacterListUiModel {
+    override fun getCharacters(): CharacterListUiModel {
         return CharacterListUiModel(dataSource.getCharacters().characterList.map {
             it.map { item ->
-                CharacterUiModel(item.id, item.name)
+                CharacterUiModel(item.id, item.name,item.image)
             }
         })
-
     }
 }

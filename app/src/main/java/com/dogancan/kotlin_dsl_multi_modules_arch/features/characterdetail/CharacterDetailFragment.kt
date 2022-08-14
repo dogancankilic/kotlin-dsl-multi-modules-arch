@@ -31,7 +31,7 @@ class CharacterDetailFragment : BaseFragment() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collectLatest { state ->
-                    binding.tvName.text = state.character?.name
+                    binding.item = state.character
                 }
             }
         }

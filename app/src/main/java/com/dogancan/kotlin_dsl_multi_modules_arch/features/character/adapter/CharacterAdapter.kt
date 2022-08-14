@@ -38,7 +38,7 @@ class CharacterAdapter @Inject constructor() : BasePagedListAdapter<CharacterUiM
         binding = CharacterListItemBinding.inflate(inflater, parent, false)
     ) {
         fun bind(item: CharacterUiModel) {
-            binding.tvName.text = item.name
+            binding.item = item
 
             binding.root.setOnClickListener {
                 onItemClick?.invoke(item)

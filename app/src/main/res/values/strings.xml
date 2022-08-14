@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">kotlin-dsl-multi-modules-arch</string>
+    <string name="characters">Characters</string>
+    <string name="episodes">Episodes</string>
 </resources>

@@ -57,6 +57,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:runner:1.5.0-alpha02")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0-alpha05")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+    debugImplementation("app.cash.turbine:turbine:0.9.0")
 
     api(Libraries.retrofit)
     api(Libraries.daggerHilt)
@@ -73,6 +75,9 @@ dependencies {
     api(AndroidLibraries.activityExt)
     api(AndroidLibraries.navigation)
     api(AndroidLibraries.navigationFrag)
+    api(TestLibraries.mockk)
+    testImplementation(TestLibraries.coroutine)
+    testImplementation(TestLibraries.archCoreTest)
 
     implementation(project(":core"))
     implementation(project(":domain"))
