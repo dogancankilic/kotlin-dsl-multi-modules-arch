@@ -86,6 +86,7 @@ class CharacterDetailViewModelTest {
 - [Retrofit](https://square.github.io/retrofit/)
 - [GSON](https://github.com/google/gson) 
 - [Glide](https://github.com/bumptech/glide#readme)
+- [Turbine](https://github.com/cashapp/turbine/blob/trunk/README.md)
 - [Material Components for Android](https://github.com/material-components/material-components-android) 
 
 
