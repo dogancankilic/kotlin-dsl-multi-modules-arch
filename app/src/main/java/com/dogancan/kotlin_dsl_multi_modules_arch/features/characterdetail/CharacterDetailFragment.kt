@@ -1,9 +1,6 @@
 package com.dogancan.kotlin_dsl_multi_modules_arch.features.characterdetail
 
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.navArgs
 import com.dogancan.core.base.platform.BaseFragment
 import com.dogancan.core.base.platform.BaseViewModel
@@ -11,9 +8,8 @@ import com.dogancan.core.utils.binding.viewBinding
 import com.dogancan.kotlin_dsl_multi_modules_arch.CharacterArgs
 import com.dogancan.kotlin_dsl_multi_modules_arch.R
 import com.dogancan.kotlin_dsl_multi_modules_arch.databinding.FragmentCharacterDetailBinding
+import com.dogancan.kotlin_dsl_multi_modules_arch.extensions.collects
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 /**
  * @author dogancankilic
@@ -28,10 +24,11 @@ class CharacterDetailFragment : BaseFragment() {
     private val binding: FragmentCharacterDetailBinding by viewBinding()
     override fun initView() {
         viewModel.getCharacter(args.id)
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uiState.collectLatest { state ->
-                    binding.item = state.character
+        viewModel.uiState.collects(viewLifecycleOwner) { uiState ->
+
+            when (uiState) {
+                is CharacterDetailViewModel.UiState.Success -> {
+                    binding.item = uiState.data
                 }
             }
         }

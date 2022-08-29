@@ -1,19 +1,16 @@
 package com.dogancan.kotlin_dsl_multi_modules_arch.features.character
 
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.dogancan.core.base.platform.BaseFragment
 import com.dogancan.core.base.platform.BaseViewModel
 import com.dogancan.core.utils.binding.viewBinding
 import com.dogancan.kotlin_dsl_multi_modules_arch.R
 import com.dogancan.kotlin_dsl_multi_modules_arch.databinding.FragmentCharacterBinding
+import com.dogancan.kotlin_dsl_multi_modules_arch.extensions.collects
 import com.dogancan.kotlin_dsl_multi_modules_arch.features.character.adapter.CharacterAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 /**
  * @author dogancankilic
@@ -34,10 +31,14 @@ class CharacterFragment : BaseFragment() {
             viewModel.getCharacters()
         }
 
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uiState.collectLatest { uiState ->
-                    characterAdapter.submitData(uiState.characters)
+        viewModel.uiState.collects(viewLifecycleOwner) { uiState ->
+            when (uiState) {
+                is CharacterViewModel.UiState.Success -> {
+                    binding.progressBar.isVisible = false
+                    characterAdapter.submitData(uiState.data)
+                }
+                is CharacterViewModel.UiState.Loading -> {
+                    binding.progressBar.isVisible = true
                 }
             }
         }

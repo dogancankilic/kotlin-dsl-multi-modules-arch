@@ -44,6 +44,11 @@ android {
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
+kotlin {
+    sourceSets.configureEach {
+        kotlin.srcDir("$buildDir/generated/ksp/$name/kotlin/")
+    }
+}
 
 dependencies {
     implementation(project(":core"))

@@ -19,7 +19,7 @@ import javax.inject.Inject
 class CharacterDetailViewModel @Inject constructor(private val characterDetailUseCase: ICharacterDetailUseCase) :
     BaseViewModel() {
 
-    private val _uiState = MutableStateFlow(UiState())
+    private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
     val uiState: StateFlow<UiState> = _uiState
 
     fun getCharacter(id: Int) = viewModelScope.launch {
@@ -27,17 +27,22 @@ class CharacterDetailViewModel @Inject constructor(private val characterDetailUs
             characterDetailUseCase.invoke(id),
             onSuccess = { result ->
                 updateUiState(result)
+            },
+            onError = {
+                UiState.Error
             }
         )
     }
 
     fun updateUiState(result: CharacterUiModel) {
         _uiState.update {
-            it.copy(character = result)
+            UiState.Success(result)
         }
     }
 
-    data class UiState(
-        var character: CharacterUiModel? = null
-    )
+    sealed interface UiState {
+        data class Success(val data: CharacterUiModel) : UiState
+        object Loading : UiState
+        object Error : UiState
+    }
 }
