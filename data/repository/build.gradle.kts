@@ -1,3 +1,4 @@
+import Versions.minSdk
 
 plugins {
     id("com.android.library")
@@ -7,6 +8,7 @@ plugins {
 
 android {
     compileSdk = 31
+    minSdk = 21
 }
 
 dependencies {

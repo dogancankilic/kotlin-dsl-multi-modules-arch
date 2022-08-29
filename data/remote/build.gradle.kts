@@ -1,3 +1,5 @@
+import Versions.minSdk
+
 plugins {
     id("com.android.library")
     id("kotlin-android")
@@ -6,6 +8,7 @@ plugins {
 
 android {
     compileSdk = 31
+    minSdk = 21
 }
 
 dependencies {
