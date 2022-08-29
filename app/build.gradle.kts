@@ -63,7 +63,7 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.5.0-alpha02")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0-alpha05")
     testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
-    debugImplementation("app.cash.turbine:turbine:0.9.0")
+    implementation("app.cash.turbine:turbine:0.9.0")
 
     api(Libraries.retrofit)
     api(Libraries.daggerHilt)
