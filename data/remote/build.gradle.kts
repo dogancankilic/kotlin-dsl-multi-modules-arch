@@ -9,7 +9,6 @@ android {
         compileSdk = 31
         minSdk = 21
     }
-
 }
 
 dependencies {
@@ -22,7 +21,6 @@ dependencies {
     api(Libraries.httpLoggingInterceptor)
     api(Libraries.sandwich)
     implementation(project(":data:model"))
-
 }
 
 java {

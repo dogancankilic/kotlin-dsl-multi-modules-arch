@@ -1,8 +1,8 @@
 package com.dogancan.domain.characterdetail
 
 import com.dogancan.repository.character.CharacterRepository
-import javax.inject.Inject
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 /**
  * @author dogancankilic

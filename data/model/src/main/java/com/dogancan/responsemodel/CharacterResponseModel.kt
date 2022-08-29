@@ -2,7 +2,6 @@ package com.dogancan.responsemodel
 
 import com.google.gson.annotations.SerializedName
 
-
 data class CharacterResponseModel(
 
     @field:SerializedName("results")

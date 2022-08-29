@@ -12,6 +12,6 @@ import javax.inject.Inject
 class CharacterDetailMapper @Inject constructor() :
     Mapper<ResultsItem, CharacterUiModel> {
     override fun map(input: ResultsItem): CharacterUiModel {
-        return CharacterUiModel(input.id, input.name,input.image)
+        return CharacterUiModel(input.id, input.name, input.image)
     }
 }

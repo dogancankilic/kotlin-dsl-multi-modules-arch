@@ -8,9 +8,9 @@ import com.dogancan.remote.character.CharacterService
 import com.dogancan.remote.di.IoDispatcher
 import com.dogancan.repository.base.BaseRepository
 import com.dogancan.responsemodel.CharacterListResponseModel
-import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
 
 /**
  * @author dogancankilic

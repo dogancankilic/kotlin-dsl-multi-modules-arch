@@ -65,7 +65,6 @@ class FragmentViewBindingDelegate<T : ViewBinding>(
             }
         })
 
-
         /**
          * Checking the fragment lifecycle
          */
@@ -73,7 +72,6 @@ class FragmentViewBindingDelegate<T : ViewBinding>(
         if (!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
             error("Cannot access view bindings. View lifecycle is ${lifecycle.currentState}!")
         }
-
 
         /**
          * Bind layout

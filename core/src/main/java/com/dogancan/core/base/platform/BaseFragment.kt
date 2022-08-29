@@ -27,7 +27,7 @@ abstract class BaseFragment : Fragment() {
 
     protected abstract fun viewModel(): BaseViewModel
 
-    private lateinit var dialog : Dialog
+    private lateinit var dialog: Dialog
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,19 +41,16 @@ abstract class BaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initView()
         dialog = requireContext().progressDialog()
-       viewLifecycleOwner.lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel().isLoading.collectLatest {
                     if (it) {
                         dialog.show()
-                    }
-                    else{
+                    } else {
                         dialog.dismiss()
                     }
                 }
             }
         }
-
-
     }
 }

@@ -9,7 +9,6 @@ android {
         compileSdk = 31
         minSdk = 21
     }
-
 }
 
 dependencies {

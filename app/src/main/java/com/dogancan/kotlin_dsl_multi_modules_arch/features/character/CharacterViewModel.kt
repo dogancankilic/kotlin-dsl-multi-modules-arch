@@ -7,13 +7,13 @@ import com.dogancan.core.base.platform.BaseViewModel
 import com.dogancan.domain.character.CharacterUiModel
 import com.dogancan.domain.character.ICharacterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * @author dogancankilic

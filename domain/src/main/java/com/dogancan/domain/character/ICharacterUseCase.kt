@@ -5,5 +5,5 @@ package com.dogancan.domain.character
  * Created on 9.08.2022
  */
 interface ICharacterUseCase {
-    fun getCharacters() : CharacterListUiModel
+    fun getCharacters(): CharacterListUiModel
 }

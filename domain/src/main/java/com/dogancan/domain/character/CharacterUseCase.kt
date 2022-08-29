@@ -2,8 +2,8 @@ package com.dogancan.domain.character
 
 import androidx.paging.map
 import com.dogancan.repository.character.CharacterRepository
-import javax.inject.Inject
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 /**
  * @author dogancankilic
@@ -14,10 +14,12 @@ class CharacterUseCase @Inject constructor(
 ) : ICharacterUseCase {
 
     override fun getCharacters(): CharacterListUiModel {
-        return CharacterListUiModel(dataSource.getCharacters().characterList.map {
-            it.map { item ->
-                CharacterUiModel(item.id, item.name,item.image)
+        return CharacterListUiModel(
+            dataSource.getCharacters().characterList.map {
+                it.map { item ->
+                    CharacterUiModel(item.id, item.name, item.image)
+                }
             }
-        })
+        )
     }
 }

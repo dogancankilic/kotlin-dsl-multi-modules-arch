@@ -14,7 +14,6 @@ abstract class BasePagedListAdapter<T : Any>(
     override fun areContentsTheSame(old: T, new: T): Boolean = contentsSame(old, new)
 }) {
 
-
     internal var recyclerView: RecyclerView? = null
 
     /**
@@ -72,5 +71,4 @@ abstract class BasePagedListAdapter<T : Any>(
         this.recyclerView = null
         super.onDetachedFromRecyclerView(recyclerView)
     }
-
 }

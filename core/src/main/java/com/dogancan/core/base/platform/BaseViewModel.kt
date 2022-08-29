@@ -36,7 +36,6 @@ abstract class BaseViewModel : ViewModel() {
                     delay(3000)
                     if (showLoading) setLoadingState(false)
                     onSuccess?.invoke(data)
-
                 }, onFailure = { error ->
                     if (showLoading) setLoadingState(false)
                     onError?.invoke(error)

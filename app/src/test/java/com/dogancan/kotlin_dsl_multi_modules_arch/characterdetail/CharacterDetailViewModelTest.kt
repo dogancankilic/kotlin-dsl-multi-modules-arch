@@ -47,8 +47,10 @@ class CharacterDetailViewModelTest {
             )
             // Then
             viewModel.uiState.test {
-                assertEquals(result.getOrNull()
-                    ?.let { CharacterDetailViewModel.UiState.Success(it) }, awaitItem()
+                assertEquals(
+                    result.getOrNull()
+                        ?.let { CharacterDetailViewModel.UiState.Success(it) },
+                    awaitItem()
                 )
             }
         }
