@@ -41,7 +41,7 @@ class CharacterViewModelTest {
 
             // Then
             viewModel.uiState.test {
-                Assert.assertEquals(result, awaitItem().characters)
+                Assert.assertEquals(result, awaitItem())
             }
         }
     }
