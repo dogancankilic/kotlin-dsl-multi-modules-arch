@@ -1,4 +1,8 @@
-# kotlin-dsl-multi-modules-archs [Work in progress]
+# kotlin-dsl-multi-modules-arch [Work in progress]
+
+![Circle CI](https://img.shields.io/circleci/build/gh/dogancankilic/kotlin-dsl-multi-modules-arch?style=plastic)
+[![Kotlin Version](https://img.shields.io/badge/kotlin-1.6.10-blue.svg)](http://kotlinlang.org/)
+
 
 Sample example about demonstrating how to architect a multi-module project.
 
