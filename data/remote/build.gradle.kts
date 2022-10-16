@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
-    id("kotlin-kapt")
+    id(BuildPlugins.AndroidLibrary)
+    id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.kotlinKapt)
 }
 
 android {
@@ -20,7 +20,7 @@ dependencies {
     api(Libraries.retrofitGsonConverter)
     api(Libraries.httpLoggingInterceptor)
     api(Libraries.sandwich)
-    implementation(project(":data:model"))
+    implementation(project(Modules.Model))
 }
 
 java {

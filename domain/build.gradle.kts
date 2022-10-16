@@ -1,14 +1,15 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(BuildPlugins.AndroidLibrary)
+    id(BuildPlugins.kotlinJetBrains)
 }
 
 android {
-    compileSdk = 32
+    compileSdkVersion(AndroidSDK.compile)
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdkVersion(AndroidSDK.min)
+        targetSdkVersion(AndroidSDK.target)
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -51,7 +52,7 @@ dependencies {
     api(Libraries.daggerHiltCompiler)
     api(KotlinLibraries.kotlinCoroutineCore)
 
-    implementation(project(":data:model"))
-    implementation(project(":data:repository"))
-    implementation(project(":core"))
+    implementation(project(Modules.Core))
+    implementation(project(Modules.Repository))
+    implementation(project(Modules.Model))
 }

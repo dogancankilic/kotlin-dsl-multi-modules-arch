@@ -1,13 +1,13 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
-    id("kotlin-kapt")
+    id(BuildPlugins.AndroidLibrary)
+    id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.kotlinKapt)
 }
 
 android {
     defaultConfig {
-        compileSdk = 31
-        minSdk = 21
+        compileSdkVersion(AndroidSDK.compile)
+        minSdkVersion(AndroidSDK.min)
     }
 }
 
@@ -30,10 +30,10 @@ dependencies {
     kapt(Libraries.daggerHiltCompiler)
     api(KotlinLibraries.kotlinCoroutineCore)
 
-    implementation(project(":data:remote"))
-    implementation(project(":data:local"))
-    implementation(project(":data:model"))
-    implementation(project(":core"))
+    implementation(project(Modules.Core))
+    implementation(project(Modules.Model))
+    implementation(project(Modules.Local))
+    implementation(project(Modules.Remote))
 }
 
 java {
