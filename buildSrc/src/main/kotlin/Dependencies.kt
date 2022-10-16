@@ -8,6 +8,40 @@
         val versionName = "1.0"
     }
 
+    object BuildPlugins {
+        //All the build plugins are added here
+        const val androidApplication = "com.android.application"
+        const val kotlinAndroid = "kotlin-android"
+        const val kotlinJetBrains = "org.jetbrains.kotlin.android"
+        const val kotlinKapt = "kotlin-kapt"
+        const val Hilt = "com.google.dagger.hilt.android"
+        const val kotlinParcelize = "kotlin-parcelize"
+        const val DaggerHiltPlugin = "dagger.hilt.android.plugin"
+        const val NavSafeArgs = "androidx.navigation.safeargs"
+        const val NavSafeArgsKt = "androidx.navigation.safeargs.kotlin"
+        const val AndroidLibrary = "com.android.library"
+        const val ktlint = "org.jlleitschuh.gradle.ktlint"
+        const val kotlinJvm = "org.jetbrains.kotlin.jvm"
+
+    }
+
+    object AndroidSDK{
+        //minimum, compile and target SDK versions
+        const val min = 21
+        const val compile = 32
+        const val target = compile
+    }
+
+    object Modules{
+        const val App = ":app"
+        const val Core = ":core"
+        const val Remote = ":data:remote"
+        const val Local = ":data:local"
+        const val Repository = ":data:repository"
+        const val Domain = ":domain"
+        const val Model = ":data:model"
+    }
+
     object Versions {
         val kotlin = "1.3.21"
         val gradle = "3.3.2"
