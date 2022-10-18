@@ -45,9 +45,6 @@
     object Versions {
         val kotlin = "1.3.21"
         val gradle = "3.3.2"
-        val compileSdka = 28
-        var minSdk = 23
-        val targetSdk = 28
         val appCompat = "1.1.0-alpha04"
         val coreKtx = "1.1.0-alpha04"
         val constraintLayout = "1.1.3"

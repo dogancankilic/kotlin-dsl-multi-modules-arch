@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion(AndroidSDK.compile)
+    compileSdk = AndroidSDK.compile
     defaultConfig {
         applicationId = "com.dogancan.kotlin_dsl_multi_modules_arch"
-        minSdkVersion(AndroidSDK.min)
-        targetSdkVersion(AndroidSDK.target)
+        minSdk = AndroidSDK.min
+        targetSdk = AndroidSDK.target
         versionCode = Releases.versionCode
         versionName = Releases.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -87,5 +87,4 @@ dependencies {
     implementation(project(Modules.Core))
     implementation(project(Modules.Domain))
     implementation(project(Modules.Model))
-
 }
