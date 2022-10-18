@@ -1,20 +1,20 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("kotlin-parcelize")
-    id("dagger.hilt.android.plugin")
-    id("androidx.navigation.safeargs")
+    id(BuildPlugins.androidApplication)
+    id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.kotlinKapt)
+    id(BuildPlugins.kotlinParcelize)
+    id(BuildPlugins.DaggerHiltPlugin)
+    id(BuildPlugins.NavSafeArgs)
 }
 
 android {
-    compileSdk = 31
+    compileSdkVersion(AndroidSDK.compile)
     defaultConfig {
         applicationId = "com.dogancan.kotlin_dsl_multi_modules_arch"
-        minSdk = 21
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(AndroidSDK.min)
+        targetSdkVersion(AndroidSDK.target)
+        versionCode = Releases.versionCode
+        versionName = Releases.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
     }
@@ -84,7 +84,8 @@ dependencies {
     testImplementation(TestLibraries.coroutine)
     testImplementation(TestLibraries.archCoreTest)
 
-    implementation(project(":core"))
-    implementation(project(":domain"))
-    implementation(project(":data:model"))
+    implementation(project(Modules.Core))
+    implementation(project(Modules.Domain))
+    implementation(project(Modules.Model))
+
 }

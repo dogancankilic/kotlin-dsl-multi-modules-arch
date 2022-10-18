@@ -1,24 +1,24 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("kotlin-parcelize")
-    id("dagger.hilt.android.plugin")
-    id("androidx.navigation.safeargs")
+    id(BuildPlugins.AndroidLibrary)
+    id(BuildPlugins.kotlinJetBrains)
+    id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.kotlinKapt)
+    id(BuildPlugins.kotlinParcelize)
+    id(BuildPlugins.DaggerHiltPlugin)
+    id(BuildPlugins.NavSafeArgs)
 }
 
 android {
-    compileSdk = 32
+    compileSdkVersion(AndroidSDK.compile)
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdkVersion(AndroidSDK.min)
+        targetSdkVersion(AndroidSDK.target)
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
+ 
     buildTypes {
         release {
             isMinifyEnabled = false
